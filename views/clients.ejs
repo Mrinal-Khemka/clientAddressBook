@@ -1,0 +1,34 @@
+<%- include('partials/header') %>
+<h1 class="head text-left"  >Client Address Book</h1>
+<div class="container-fluid">
+<div class="clients">
+<table class="table head table-responsive-md table-striped table-bordered table-hover">
+    <tr>
+        <th scope="col" >Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Address</th>
+        <th scope="col">Company</th>
+        <th scope="col">Notes</th>
+        <th scope="col">Edit</th>
+    </tr>
+    
+    <tr>
+     <%    userClients.forEach(function(client){ %>
+            <td><%- client.name%></td>
+            <td><%- client.email%></td>
+            <td><%- client.phone%></td>
+            <td><%- client.address%></td>
+            <td><%- client.company%></td>
+            <td><%- client.notes%></td>
+            <td><a href="/edit" type="button" class="btn btn-default btn-primary btn-sm"><i class="far fa-edit"></i></a></td>       
+
+     <%  });%>
+    </tr>
+    <tr>
+        <td colspan="7"><div class="text-center"><a href="/add" type="button" class="btn btn-sm btn-success"> <i class="fas fa-plus"></i> Add Client</a></div></td>
+    </tr>
+</table>
+</div>
+</div>
+<%- include('partials/footer') %>

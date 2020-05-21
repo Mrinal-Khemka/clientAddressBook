@@ -1,0 +1,99 @@
+<%- include('partials/header')%>
+ <div class="container"> 
+  <h1 class="text-center" style="color: aliceblue;" >Client Address Book</h1>
+   
+  <div class="row">
+    <div class="col-md-6 custom-form">
+      <form action="/login" style="width:90%" method="post" >
+          <h1 class="text-center" style="padding-top: 30px;"  >Log In</h1>
+          <p class="text-center"> Login via registered email.</p>
+          <hr>
+      
+          <label for="email"><b>Email</b></label>
+          <input class="" type="text" placeholder="Enter Email" name="username" required>
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="password" required>
+      
+          <!-- <label for="psw-repeat"><b>Repeat Password</b></label>
+          <input type="password" placeholder="Repeat Password" name="psw-repeat" required> -->
+      
+          <label>
+            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+          </label>
+      
+          <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+      
+          <div class="clearfix">
+           
+            <button type="submit" class="signinbtn btn-primary">Log in</button>
+          </div>
+          <p>Don't have an account ? <a href="#" onclick="document.getElementById('id01').style.display='block'" >Sign Up</a>
+          </p>
+      </form>
+      </div>
+     
+      <div class="col-md-6 social-login">
+        <h1 class="head" style=" padding:3.2rem 0;" > Sign in with your Social Network</h1>
+      <div class="card social-block">
+        <div class="card-body">
+          <a class="btn btn-block btn-lg btn-social btn-google" href="/auth/google" role="button">
+            <i class="fab fa-google"></i>
+            Sign in with Google
+          </a>
+        </div>
+      </div>
+      
+      <div class="card social-block">
+        <div class="card-body">
+          <a class="btn btn-block btn-lg btn-social btn-facebook" href="/auth/facebook" role="button">
+            <i class="fab fa-facebook"></i>
+           Sign in with Facebook
+          </a>
+        </div>
+      </div>
+      
+      <div class="card social-block last">
+        <div class="card-body ">
+          <a class="btn btn-block btn-social  btn-lg btn-twitter" href="/auth/twitter" role="button">
+            <i class="fab fa-twitter"></i>
+            Sign in with Twitter
+          </a>
+        </div>
+      </div>
+      
+      </div>
+      <div class="or">OR</div>
+      <!-- modal sign up form -->
+      <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <form class="modal-content " action="/register" method="POST" >
+          <div class="cont">
+            <h1>Sign Up</h1>
+            <p>Please fill in this form to create an account.</p>
+            <hr>
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="username" required>
+      
+            <label for="psw"><b>Password</b></label>
+            <input type="password" id="pass" placeholder="Enter Password" name="password" required>
+      
+            <label for="psw-repeat"><b>Repeat Password</b></label>
+            <input type="password" id="repass" placeholder="Repeat Password" name="pswre" required>
+             <span class="error">   </span>
+            <label>
+              <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+            </label>
+      
+            <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+      
+            <div class="clearfix">
+              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn" style="background-color: #f44336;">Cancel</button>
+              <button type="submit" id="submit" class="signupbtn">Sign Up</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    </div> <!--container-ends--->
+<%- include('partials/footer') %>
